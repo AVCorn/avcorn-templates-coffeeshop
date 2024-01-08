@@ -22,7 +22,7 @@ declare(strict_types=1);
  * @var array $config Configuration
  */
 $config['info']['company'] = "Bene's Brew House";
-$config['info']['title'] = 'Crazy Good Coffee';
-$config['info']['motto'] = 'Get your fix!';
-$config['info']['slogan'] = 'Get your fix!';
-$config['info']['logo'] = '/assets/images/logos/logo-coffee.png';
+$config['info']['title']   = 'Crazy Good Coffee';
+$config['info']['motto']   = 'Get your caffeinated fix!';
+$config['info']['slogan']  = 'Get your caffeinated fix!';
+$config['info']['logo']    = '/assets/images/logos/logo-coffeeshop.png';

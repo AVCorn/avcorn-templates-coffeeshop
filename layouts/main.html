@@ -1,93 +1,208 @@
 <!DOCTYPE html>
-<html class="whatinput-types-initial whatinput-types-mouse" lang="en">
+<html lang="en">
     <head>
-        <!-- each page can override this -->
         <title>{% block title %}{{ info.title }}{% endblock %}</title>
 
         <meta name="author" content="WebElements.agency">
         <meta name="description" content="{% block description %}{% endblock %}">
         <meta name="keywords" content="{% block keywords %}{% endblock %}">
-        <meta name="generator" content="AVCorn">
 
-        <!-- base avcorn meta -->
-        {% include "components/head.html" %}
+        <link rel="stylesheet" href="/template/coffeeshop/assets/styles/main.css" />
+		<noscript><link rel="stylesheet" href="/template/coffeeshop/assets/styles/noscript.css" /></noscript>
 
-        <!-- Layout Styles/Scripts Here -->
+        <script src="/template/coffeeshop/assets/scripts/jquery.min.js"></script>
 
-        <!-- use these as overrides for each individual page -->
         {% block styles %}{% endblock %}
         {% block scripts %}{% endblock %}
     </head>
 
-    <body>
-        <!-- admin functionality injection (hidden) -->
-        {% include "components/admin.html" %}
+	<body class="is-preload landing">
+		<div id="page-wrapper">
 
-        <header class="top">
-            <div class="top-bar">
-                <!-- company logo -->
-                <div class="logo">
-                    <a class="logo-link" href="/">
-                        <img class="logo-img" src="{{ info.logo }}" alt="{{ info.company }}" />
+            <header id="header">
+                <h1 id="logo">
+                    <a href="/">
+                        {{ info.company }}
                     </a>
-                </div>
-
-                <!-- basic navigation -->
-                <nav class="navigation">
-                    <ul class="navigation-list menu">
+                </h1>
+                <nav id="nav">
+                    <ul>
                         {% include "components/navigation.html" %}
                     </ul>
                 </nav>
-            </div>
+            </header>
 
-            <div class="top-content">
-                <!-- content title overridden by each page -->
-                {% block header %}
-                    <h1 class="title editable">
-                        {{ info.title }}
-                    </h1>
-                {% endblock %}
-            </div>
-        </header>
+			<!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h2>{{ info.title }}</h2>
+                        <p>{{ info.motto }}</p>
+                    </header>
+                    <span class="image">
+                        <img class="logo-img" width="300px" src="{{ info.logo }}" alt="{{ info.company }}" />
+                    </span>
+                </div>
+                <a href="#one" class="goto-next scrolly">Next</a>
+            </section>
 
-        <article class="main">
-            <!-- content overridden by each page -->
-            {% block content %}
-                <div class="main-content editable"></div>
-            {% endblock %}
-        </article>
+			<!-- One -->
+            <section id="one" class="spotlight style1 bottom">
+                <span class="image fit main"><img src="/template/coffeeshop/assets/images/pic02.jpg" alt="" /></span>
+                <div class="content">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4 col-12-medium">
+                                <header>
+                                    <h2>Odio faucibus ipsum integer consequat</h2>
+                                    <p>Nascetur eu nibh vestibulum amet gravida nascetur praesent</p>
+                                </header>
+                            </div>
+                            <div class="col-4 col-12-medium">
+                                <p>Feugiat accumsan lorem eu ac lorem amet sed accumsan donec.
+                                Blandit orci porttitor semper. Arcu phasellus tortor enim mi
+                                nisi praesent dolor adipiscing. Integer mi sed nascetur cep aliquet
+                                augue varius tempus lobortis porttitor accumsan consequat
+                                adipiscing lorem dolor.</p>
+                            </div>
+                            <div class="col-4 col-12-medium">
+                                <p>Morbi enim nascetur et placerat lorem sed iaculis neque ante
+                                adipiscing adipiscing metus massa. Blandit orci porttitor semper.
+                                Arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer
+                                mi sed nascetur cep aliquet augue varius tempus. Feugiat lorem
+                                ipsum dolor nullam.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#two" class="goto-next scrolly">Next</a>
+            </section>
 
-        <!-- a contact form -->
-        <div clas="contact">
-            {% include "components/contact.html" %}
+        <!-- Two -->
+            <section id="two" class="spotlight style2 right">
+                <span class="image fit main"><img src="/template/coffeeshop/assets/images/pic03.jpg" alt="" /></span>
+                <div class="content">
+                    <header>
+                        <h2>Interdum amet non magna accumsan</h2>
+                        <p>Nunc commodo accumsan eget id nisi eu col volutpat magna</p>
+                    </header>
+                    <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+                    <ul class="actions">
+                        <li><a href="#" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+                <a href="#three" class="goto-next scrolly">Next</a>
+            </section>
+
+        <!-- Three -->
+            <section id="three" class="spotlight style3 left">
+                <span class="image fit main bottom"><img src="/template/coffeeshop/assets/images/pic04.jpg" alt="" /></span>
+                <div class="content">
+                    <header>
+                        <h2>Interdum felis blandit praesent sed augue</h2>
+                        <p>Accumsan integer ultricies aliquam vel massa sapien phasellus</p>
+                    </header>
+                    <p>Feugiat accumsan lorem eu ac lorem amet ac arcu phasellus tortor enim mi mi nisi praesent adipiscing. Integer mi sed nascetur cep aliquet augue varius tempus lobortis porttitor lorem et accumsan consequat adipiscing lorem.</p>
+                    <ul class="actions">
+                        <li><a href="#" class="button">Learn More</a></li>
+                    </ul>
+                </div>
+                <a href="#four" class="goto-next scrolly">Next</a>
+            </section>
+
+        <!-- Four -->
+            <section id="four" class="wrapper style1 special fade-up">
+                <div class="container">
+                    <header class="major">
+                        <h2>Accumsan sed tempus adipiscing blandit</h2>
+                        <p>Iaculis ac volutpat vis non enim gravida nisi faucibus posuere arcu consequat</p>
+                    </header>
+                    <div class="box alt">
+                        <div class="row gtr-uniform">
+                            <section class="col-4 col-6-medium col-12-xsmall">
+                                <span class="icon solid alt major fa-chart-area"></span>
+                                <h3>Ipsum sed commodo</h3>
+                                <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                            </section>
+                            <section class="col-4 col-6-medium col-12-xsmall">
+                                <span class="icon solid alt major fa-comment"></span>
+                                <h3>Eleifend lorem ornare</h3>
+                                <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                            </section>
+                            <section class="col-4 col-6-medium col-12-xsmall">
+                                <span class="icon solid alt major fa-flask"></span>
+                                <h3>Cubilia cep lobortis</h3>
+                                <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                            </section>
+                            <section class="col-4 col-6-medium col-12-xsmall">
+                                <span class="icon solid alt major fa-paper-plane"></span>
+                                <h3>Non semper interdum</h3>
+                                <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                            </section>
+                            <section class="col-4 col-6-medium col-12-xsmall">
+                                <span class="icon solid alt major fa-file"></span>
+                                <h3>Odio laoreet accumsan</h3>
+                                <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                            </section>
+                            <section class="col-4 col-6-medium col-12-xsmall">
+                                <span class="icon solid alt major fa-lock"></span>
+                                <h3>Massa arcu accumsan</h3>
+                                <p>Feugiat accumsan lorem eu ac lorem amet accumsan donec. Blandit orci porttitor.</p>
+                            </section>
+                        </div>
+                    </div>
+                    <footer class="major">
+                        <ul class="actions special">
+                            <li><a href="#" class="button">Magna sed feugiat</a></li>
+                        </ul>
+                    </footer>
+                </div>
+            </section>
+
+        <!-- Five -->
+            <section id="five" class="wrapper style2 special fade">
+                <div class="container">
+                    <header>
+                        <h2>Magna faucibus lorem diam</h2>
+                        <p>Ante metus praesent faucibus ante integer id accumsan eleifend</p>
+                    </header>
+                    <form method="post" action="#" class="cta">
+                        <div class="row gtr-uniform gtr-50">
+                            <div class="col-8 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Your Email Address" /></div>
+                            <div class="col-4 col-12-xsmall"><input type="submit" value="Get Started" class="fit primary" /></div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!--<article class="main">-->
+                <!-- content overridden by each page -->
+                <!--{% block content %}
+                    <div class="main-content editable"></div>
+                {% endblock %}-->
+            <!--</article>-->
+
+			<!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    {% include "components/social.html" %}
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; {{ info.copyright }} {{ "now"|date("Y") }}. {{ info.legal }}</li>
+                    <li>Design: <a href="https://webelements.agency">Web Elements</a></li>
+                </ul>
+            </footer>
+
         </div>
 
-        <footer class="bottom">
-            <!-- footer overridden by each page -->
-            {% block footer %}
-                <div class="bottom-content editable"></div>
-            {% endblock %}
+        <script src="/template/coffeeshop/assets/scripts/jquery.scrolly.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/jquery.dropotron.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/jquery.scrollex.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/browser.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/breakpoints.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/util.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/main.js"></script>
 
-            <!-- social icons -->
-            <ul class="social">
-                {% include "components/social.html" %}
-            </ul>
-
-            <!-- basic navigation -->
-            <nav class="bottom-navigation">
-                <ul class="menu">
-                    {% include "components/navigation.html" %}
-                </ul>
-            </nav>
-
-            <!-- copyright info -->
-            <div class="copyright">
-                &copy; {{ info.copyright }} {{ "now"|date("Y") }} - {{ info.legal }}
-            </div>
-        </footer>
-
-        <!-- base avcorn post-load -->
-        {% include "components/foot.html" %}
         {% block loaded %}{% endblock %}
     </body>
 </html>
