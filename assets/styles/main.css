@@ -2496,7 +2496,7 @@ input, select, textarea {
 					font-weight: 400;
 				}
 
-				.social-.major.alt:before {
+				.icon.major.alt:before {
 					color: #272833 !important;
 					text-shadow: 1px 0 0 #ffffff, -1px 0 0 #ffffff, 0 1px 0 #ffffff, 0 -1px 0 #ffffff;
 				}

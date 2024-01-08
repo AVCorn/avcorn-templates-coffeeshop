@@ -26,3 +26,6 @@ $config['info']['title']   = 'Crazy Good Coffee';
 $config['info']['motto']   = 'Get your caffeinated fix!';
 $config['info']['slogan']  = 'Get your caffeinated fix!';
 $config['info']['logo']    = '/assets/images/logos/logo-coffeeshop.png';
+$config['home']            = '/home/coffeeshop';
+
+$config['navigation'][0]['href'] = $config['home'];

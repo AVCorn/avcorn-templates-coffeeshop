@@ -1,1 +1,78 @@
-main.html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{% block title %}{{ info.title }}{% endblock %}</title>
+
+        <meta name="author" content="WebElements.agency">
+        <meta name="description" content="{% block description %}{% endblock %}">
+        <meta name="keywords" content="{% block keywords %}{% endblock %}">
+
+        {% include "components/head.html" %}
+
+        <link rel="stylesheet" href="/template/coffeeshop/assets/styles/main.css" />
+		<noscript><link rel="stylesheet" href="/template/coffeeshop/assets/styles/noscript.css" /></noscript>
+
+        <script src="/template/coffeeshop/assets/scripts/jquery.min.js"></script>
+
+        {% block styles %}{% endblock %}
+        {% block scripts %}{% endblock %}
+    </head>
+
+	<body class="is-preload landing">
+		<div id="page-wrapper">
+
+            <header id="header">
+                <h1 id="logo">
+                    <a href="{{ home }}{{ linkparams }}">
+                        {{ info.company }}
+                    </a>
+                </h1>
+                <nav id="nav">
+                    <ul>
+                        {% include "components/navigation.html" %}
+                    </ul>
+                </nav>
+            </header>
+
+			<!-- Banner -->
+            <section id="banner">
+                <div class="content">
+                    <header>
+                        <h2>{{ info.title }}</h2>
+                        <p>{{ info.motto }}</p>
+                    </header>
+                    <span class="image">
+                        <img class="logo-img" width="300px" src="{{ info.logo }}" alt="{{ info.company }}" />
+                    </span>
+                </div>
+                <a href="#one" class="goto-next scrolly">Next</a>
+            </section>
+
+            {% block content %}
+                <div class="main-content editable"></div>
+            {% endblock %}
+
+			<!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    {% include "components/social.html" %}
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; {{ info.copyright }} {{ "now"|date("Y") }}. {{ info.legal }}</li>
+                    <li>Design: <a href="https://webelements.agency">Web Elements</a></li>
+                </ul>
+            </footer>
+
+        </div>
+
+        <script src="/template/coffeeshop/assets/scripts/jquery.scrolly.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/jquery.dropotron.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/jquery.scrollex.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/browser.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/breakpoints.min.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/util.js"></script>
+        <script src="/template/coffeeshop/assets/scripts/main.js"></script>
+
+        {% block loaded %}{% endblock %}
+    </body>
+</html>
